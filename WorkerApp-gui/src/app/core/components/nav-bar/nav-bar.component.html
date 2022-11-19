@@ -1,0 +1,25 @@
+<div class="header-container">
+  <div class="title">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="panel">
+    <ul class="nav-bar-list">
+      <li><a [routerLink]="['/workers']">Pracownicy</a></li>
+      <li><a [routerLink]="['/tasks']">Zadania</a></li>
+      <li><a [routerLink]="['/orders']">Zamówienia</a></li>
+      <li><a [routerLink]="['/reports']">Zgłoszenia</a></li>
+    </ul>
+  </div>
+  <div class="login-logout">
+    <p *ngIf="this.isLoggedIn">Witaj ponownie {{this.username}}</p>
+    <a [routerLink]="['/login']" *ngIf="!this.isLoggedIn"><button pButton type="button" label="Zaloguj"
+        class="p-button-outlined" id="button-login"></button>
+    </a>
+    <button pButton type="button" (click)="logout()" label="Wyloguj" *ngIf="this.isLoggedIn" class="p-button-outlined"
+      id="button-logout">
+    </button>
+    <a [routerLink]="['/sign-up']" *ngIf="!this.isLoggedIn"><button pButton type="button" label="Zarejestruj się"
+        class="p-button-outlined" id="button-register"></button>
+    </a>
+  </div>
+</div>

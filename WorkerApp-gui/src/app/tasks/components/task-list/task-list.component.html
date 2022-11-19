@@ -1,0 +1,54 @@
+<div class="task-list-container">
+  <div class="task-list-header">
+    <h1>{{title}}</h1>
+    <div class="edit-panel" *ngIf="this.isLogged">
+      <a [routerLink]="['/tasks/add-task']">
+        <button pButton type="button" label="Dodaj zadanie" class="p-button-outlined">
+          <i class="pi pi-file-import" id="add-icon"></i>
+        </button>
+      </a>
+    </div>
+  </div>
+  <div class="task-list-table">
+    <p-table [value]="taskList" class="task-table" responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">Nazwa<p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="description">Opis<p-sortIcon field="description"></p-sortIcon>
+          </th>
+          <th pSortableColumn="workerResponsible.name">Osoba przypisana
+            <p-sortIcon field="workerResponsible.name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="dateOfRegistration">Data powstania
+            <p-sortIcon field="dateOfRegistration"></p-sortIcon>
+          </th>
+          <th *ngIf="this.isLogged">Edytuj</th>
+          <th *ngIf="this.isLogged">Usuń</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-task>
+        <tr>
+          <td>{{task.name}}</td>
+          <td>{{task.description}}</td>
+          <td id="worker-responsible-info">
+            <ul>
+              <li>{{task.workerResponsible?.name}}</li>
+              <li>{{task.workerResponsible?.surname}}</li>
+              <li>{{task.workerResponsible?.function}}</li>
+            </ul>
+          </td>
+          <td>{{task.dateOfRegistration | date : "MMM d, y"}}</td>
+          <td *ngIf="this.isLogged">
+            <a [routerLink]="['/tasks/edit-task/', task.name]">
+              <i class="pi pi-file-edit" id="edit-icon"></i>
+            </a>
+          </td>
+          <td *ngIf="this.isLogged">
+            <i class="pi pi-file-excel" id="delete-icon" (click)="deleteTask(task.name)"></i>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

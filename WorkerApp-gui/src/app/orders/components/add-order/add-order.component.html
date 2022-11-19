@@ -1,0 +1,25 @@
+<div class="add-order-container">
+  <h1>{{title}}</h1>
+  <form class="add-order-form" [formGroup]="newOrder" (ngSubmit)="addOrder(newOrder)">
+    <div class="order-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="name">
+        <label for="float-input">Nazwa</label>
+      </span>
+    </div>
+    <div class="order-item-block" id="order-date">
+      <label>Product Owner</label>
+      <span class="p-float-label">
+        <p-dropdown [options]="workers" formControlName="principal" optionLabel="name"></p-dropdown>
+      </span>
+    </div>
+    <div class="order-item-block" id="order-date">
+      <label>Deadline zamówienia</label>
+      <span class="p-float-label">
+        <input id="float-input" type="date" pInputText formControlName="deadline">
+        <label for="float-input"></label>
+      </span>
+    </div>
+    <button pButton type="submit" class="add-button" label="Dodaj"></button>
+  </form>
+</div>

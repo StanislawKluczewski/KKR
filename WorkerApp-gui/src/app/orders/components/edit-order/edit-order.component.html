@@ -1,0 +1,26 @@
+<div class="edit-order-container" *ngIf="this.searchOrder">
+  <h1>Edytuj {{this.searchOrderName}}</h1>
+  <form class="edit-order-form" [formGroup]="editOrder" (submit)="updateOrder(editOrder, this.searchOrder.name)">
+    <div class="order-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="name">
+        <label for="float-input">Nazwa</label>
+      </span>
+    </div>
+    <div class="order-item-block" id="order-date">
+      <label>Osoba odpowiedzialna</label>
+      <span class="p-float-label">
+        <p-dropdown [options]="workers" formControlName="principal" optionLabel="name"></p-dropdown>
+      </span>
+    </div>
+    <div class="order-item-block" id="order-date">
+      <label>Data rejestracji zadania</label>
+      <span class="p-float-label">
+        <input id="float-input" type="date" pInputText formControlName="deadline" [value]="this.searchOrder.deadline">
+        <label for="float-input"></label>
+      </span>
+    </div>
+    <button pButton type="submit" class="edit-button" label="Edytuj"></button>
+  </form>
+</div>
+<p *ngIf="!this.searchOrder">Zamówienie nie istnieje</p>
