@@ -1,0 +1,115 @@
+:host ::ng-deep {
+
+  .p-datatable {
+    table-layout: fixed;
+    width: 100%;
+    font-weight: 300;
+    text-align: center;
+    outline: 2px solid rgb(7, 7, 201);
+    border-collapse: collapse;
+    color: black;
+    font-size: 0.9rem;
+
+    .p-sortable-column.p-highlight:hover {
+      color: rgb(141, 141, 141);
+    }
+
+    .p-sortable-column.p-highlight {
+      background: #e3e3e3;
+      color: navy;
+    }
+  }
+
+  .p-datatable-thead>tr>th {
+    background-color: rgb(154, 154, 154);
+    color: white;
+    text-align: center;
+    outline: 1px solid rgb(242, 242, 242);
+
+    i:hover {
+      cursor: pointer;
+    }
+  }
+
+  .p-datatable .p-datatable-tbody>tr>td {
+    padding: 20px 20px 20px 20px;
+    outline: 1px solid rgb(151, 151, 151);
+  }
+}
+
+.task-list-container {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.task-list-table {
+  text-align: center;
+}
+
+.task-list-header {
+  margin-bottom: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-list-header h1 {
+  letter-spacing: 0.09rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-right: 20px;
+  border-left: 1px solid rgb(7, 7, 201);
+  border-right: 1px solid rgb(7, 7, 201);
+  width: 200px;
+}
+
+.edit-panel {
+  margin-left: 20px;
+  font-size: 1rem;
+  padding: 5px 5px 5px 5px;
+}
+
+.edit-panel a {
+  text-decoration: none;
+}
+
+.edit-panel button {
+  color: white;
+}
+
+.edit-panel button:hover {
+  color: black;
+  background-color: white;
+  transition: 0.3s;
+  border-color: navy;
+}
+
+#add-icon {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  color: rgb(7, 7, 201);
+}
+
+#edit-icon {
+  font-size: 1.5rem;
+  color: navy;
+  cursor: pointer;
+}
+
+#delete-icon {
+  font-size: 1.5rem;
+  color: red;
+  cursor: pointer;
+}
+
+#worker-responsible-info ul {
+  list-style: none;
+  display: flex;
+  font-weight: bolder;
+}
+
+#worker-responsible-info li {
+  padding-left: 10px;
+}

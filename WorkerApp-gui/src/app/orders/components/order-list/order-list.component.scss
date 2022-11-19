@@ -1,0 +1,109 @@
+:host ::ng-deep {
+
+  .p-datatable {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-align: center;
+    outline: 2px solid rgb(143, 8, 19);
+    border-collapse: collapse;
+    color: black;
+
+    .p-sortable-column.p-highlight:hover {
+      color: rgb(141, 141, 141);
+    }
+
+    .p-sortable-column.p-highlight {
+      background: #e3e3e3;
+      color: navy;
+    }
+  }
+
+  .p-datatable-thead>tr>th {
+    background-color: rgb(154, 154, 154);
+    color: white;
+    outline: 1px solid rgb(242, 242, 242);
+  }
+
+  .p-datatable .p-datatable-tbody>tr>td {
+    padding: 20px 20px 20px 20px;
+    outline: 1px solid rgb(151, 151, 151);
+  }
+}
+
+.order-list-container {
+  display: block;
+  text-align: center;
+}
+
+.order-list-header {
+  margin-bottom: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-list-header h1 {
+  letter-spacing: 0.09rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-right: 20px;
+  border-left: 1px solid rgb(143, 8, 19);
+  border-right: 1px solid rgb(143, 8, 19);
+  width: 230px;
+}
+
+.edit-panel {
+  font-size: 1rem;
+}
+
+.edit-panel button {
+  color: white;
+}
+
+.edit-panel button:hover {
+  background-color: white;
+  color: rgb(143, 8, 19)
+}
+
+
+.edit-panel:hover {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-panel p {
+  margin-left: 5px;
+  letter-spacing: 0.012rem;
+}
+
+.edit-panel a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.edit-panel a:hover {
+  color: black;
+}
+
+#add-icon {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  color: rgb(143, 8, 19);
+}
+
+#edit-icon {
+  font-size: 1.5rem;
+  color: navy;
+  cursor: pointer;
+}
+
+#delete-icon {
+  font-size: 1.5rem;
+  color: red;
+  cursor: pointer;
+}

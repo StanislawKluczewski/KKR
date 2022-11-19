@@ -1,0 +1,33 @@
+<div class="edit-task-container" *ngIf="this.task">
+  <h1>Edytuj {{this.searchName}}</h1>
+  <form class="edit-task-form" [formGroup]="newTask" (submit)="editTask(newTask, this.task.name)">
+    <div class="task-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="name">
+        <label for="float-input">Nazwa</label>
+      </span>
+    </div>
+    <div class="task-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="description">
+        <label for="float-input">Opis</label>
+      </span>
+    </div>
+    <div class="task-item-block" id="task-date">
+      <label>Osoba odpowiedzialna</label>
+      <span class="p-float-label">
+        <p-dropdown [options]="workers" formControlName="workerResponsible" optionLabel="name"></p-dropdown>
+      </span>
+    </div>
+    <div class="task-item-block" id="task-date">
+      <label>Data rejestracji zadania</label>
+      <span class="p-float-label">
+        <input id="float-input" type="date" pInputText formControlName="dateOfRegistration"
+          [value]="this.task.dateOfRegistration">
+        <label for="float-input"></label>
+      </span>
+    </div>
+    <button pButton type="submit" class="edit-button" label="Edytuj"></button>
+  </form>
+</div>
+<p *ngIf="!this.task">Task nie istnieje</p>

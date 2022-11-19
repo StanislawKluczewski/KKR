@@ -1,0 +1,61 @@
+.add-report-container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-report-header {
+  display: flex;
+  justify-content: center;
+}
+
+.add-report-header h1 {
+  letter-spacing: 0.06rem;
+  font-weight: 300;
+  border-left: 1px solid rgb(199, 22, 199);
+  border-right: 1px solid rgb(199, 22, 199);
+  font-size: 1.3rem;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.add-report-form {
+  padding: 20px 20px 20px 20px;
+}
+
+.p-float-label {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  height: 200px;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 0.8rem;
+}
+
+#add-report-button {
+  background-color: rgb(107, 11, 107);
+  border: 1px solid white;
+  margin-top: 10px;
+  width: 150px;
+  left: 30%;
+  justify-content: center;
+}
+
+#add-report-button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid rgb(107, 11, 107);
+}

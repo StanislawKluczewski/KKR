@@ -1,0 +1,47 @@
+<div class="section">
+  <div class="order-list-container">
+    <div class="order-list-header">
+      <h1>{{title}}</h1>
+      <div class="edit-panel" *ngIf="this.isLogged">
+        <a [routerLink]="['/orders/add-order']">
+          <button pButton type="button" label="Dodaj zamówienie" class="p-button-outlined">
+            <i class="pi pi-user-plus" id="add-icon"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="order-list-table">
+      <p-table [value]="orders" class="order-table" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="name">Nazwa<p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="principal.name">Odpowiedzialna osoba<p-sortIcon field="principal.name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="deadline">Termin deadline<p-sortIcon field="deadline"></p-sortIcon>
+            </th>
+            <th *ngIf="this.isLogged">Edytuj</th>
+            <th *ngIf="this.isLogged">Usuń</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-order>
+          <tr>
+            <td>{{order.name}}</td>
+            <td>
+              {{order.principal.name}}
+              {{order.principal.surname}}
+            </td>
+            <td>{{order.deadline | date : "MMM d, y"}}</td>
+            <td *ngIf="this.isLogged">
+              <a [routerLink]="['/orders/edit-order', order.name]">
+                <i class="pi pi-file-edit" id="edit-icon"></i>
+              </a>
+            </td>
+            <td *ngIf="this.isLogged">
+              <i class="pi pi-file-excel" id="delete-icon" (click)="deleteOrder(order.name)"></i>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>

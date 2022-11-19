@@ -1,0 +1,24 @@
+.footer {
+  text-align: center;
+  color: white;
+  bottom: 0px;
+  width: 100%;
+  border-top: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.footer:hover {
+  border-top: 1px solid darkgoldenrod;
+  transition: 0.5s;
+}
+
+.footer h1 {
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  border-right: 1px solid darkgoldenrod;
+  border-left: 1px solid darkgoldenrod;
+}
