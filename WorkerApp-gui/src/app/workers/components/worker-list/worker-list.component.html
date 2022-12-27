@@ -1,0 +1,48 @@
+<div class="section">
+  <div class="worker-list-container">
+    <div class="worker-list-header">
+      <h1>{{title}}</h1>
+      <div class="edit-panel" *ngIf="this.isLogged">
+        <a [routerLink]="['/workers/add-worker']">
+          <button pButton type="button" label="Dodaj pracownika" class="p-button-outlined">
+            <i class="pi pi-user-plus" id="add-icon"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="worker-list-table">
+      <p-table [value]="workers" class="worker-table" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="name">Imię<p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="surname">Nazwisko<p-sortIcon field="surname"></p-sortIcon>
+            </th>
+            <th pSortableColumn="function">Funkcja<p-sortIcon field="function"></p-sortIcon>
+            </th>
+            <th pSortableColumn="age">Wiek<p-sortIcon field="age"></p-sortIcon>
+            </th>
+            <th *ngIf="this.isLogged">Edytuj</th>
+            <th *ngIf="this.isLogged">Usuń</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-worker>
+          <tr>
+            <td>{{worker.name}}</td>
+            <td>{{worker.surname}}</td>
+            <td>{{worker.function}}</td>
+            <td>{{worker.age}}</td>
+            <td *ngIf="this.isLogged">
+              <a [routerLink]="['/workers/edit-worker', worker.name]">
+                <i class="pi pi-file-edit" id="edit-icon"></i>
+              </a>
+            </td>
+            <td *ngIf="this.isLogged">
+              <i class="pi pi-file-excel" id="delete-icon" (click)="deleteWorker(worker.name)"></i>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

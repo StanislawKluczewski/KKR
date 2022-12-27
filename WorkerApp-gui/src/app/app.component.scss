@@ -1,0 +1,40 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 100px;
+  font-size: 0.7rem;
+}
+
+@media(min-width: 1200px) {
+  main {
+    padding-bottom: 50px;
+    min-height: 300px;
+    font-size: 0.2rem;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 20px;
+  font-size: 0.7rem;
+  background-image: linear-gradient(rgba(25, 25, 25, 0.897), rgba(0, 0, 0, 0.875)), url('../app/shared/img/workers-bgc-image.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+  min-height: 800px;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+footer {
+  background-color: black;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
+}

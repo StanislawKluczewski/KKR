@@ -1,0 +1,50 @@
+<div class="sign-up-container">
+  <h1>Zarejestruj się</h1>
+  <form class="sign-up-form" [formGroup]="signUpUser" (submit)="signUp(this.signUpUser)">
+    <div class="sign-up-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="name" required>
+        <label for="float-input">Imię</label>
+      </span>
+      <div class="error-info">
+        <small class="small-error" *ngIf="this.signUpUser.get('name')?.errors?.['checkAppropriateField']">
+          Imię nie może mieć pustych znaków.
+        </small>
+      </div>
+    </div>
+    <div class="sign-up-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="surname" required>
+        <label for="float-input">Nazwisko</label>
+      </span>
+      <div class="error-info">
+        <small class="small-error" *ngIf="this.signUpUser.get('surname')?.errors?.['checkAppropriateField']">
+          Nazwisko nie może mieć pustych znaków.
+        </small>
+      </div>
+    </div>
+    <div class="sign-up-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="email" pInputText formControlName="email" required>
+        <label for="float-input">Email</label>
+      </span>
+      <div class="error-info">
+        <small class="small-error" *ngIf="this.signUpUser.get('email')?.errors?.['checkAppropriateField']">
+          Email nie może mieć pustych znaków.
+        </small>
+      </div>
+    </div>
+    <div class="sign-up-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="password" pInputText formControlName="password" required>
+        <label for="float-input">Hasło</label>
+      </span>
+      <div class="error-info">
+        <small class="small-error" *ngIf="this.signUpUser.get('password')?.errors?.['checkAppropriateField']">
+          Hasło nie może mieć pustych znaków.
+        </small>
+      </div>
+    </div>
+    <button pButton type="submit" class="sign-up-button" label="Zajerestruj się"></button>
+  </form>
+</div>

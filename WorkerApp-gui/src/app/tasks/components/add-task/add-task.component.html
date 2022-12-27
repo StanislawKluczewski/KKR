@@ -1,0 +1,31 @@
+<div class="add-task-container">
+  <h1>{{title}}</h1>
+  <form class="add-task-form" [formGroup]="newTask" (ngSubmit)="addTask(newTask)">
+    <div class="task-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="name">
+        <label for="float-input">Nazwa</label>
+      </span>
+    </div>
+    <div class="task-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="description">
+        <label for="float-input">Opis</label>
+      </span>
+    </div>
+    <div class="task-item-block" id="task-date">
+      <label>Osoba odpowiedzialna</label>
+      <span class="p-float-label">
+        <p-dropdown [options]="workers" formControlName="workerResponsible" optionLabel="name"></p-dropdown>
+      </span>
+    </div>
+    <div class="task-item-block" id="task-date">
+      <label>Data rejestracji zadania</label>
+      <span class="p-float-label">
+        <input id="float-input" type="date" pInputText formControlName="dateOfRegistration">
+        <label for="float-input"></label>
+      </span>
+    </div>
+    <button pButton type="submit" class="add-button" label="Dodaj"></button>
+  </form>
+</div>

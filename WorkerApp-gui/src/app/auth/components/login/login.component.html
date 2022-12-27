@@ -1,0 +1,29 @@
+<div class="login-container">
+  <h1>Zaloguj się</h1>
+  <form class="login-form" [formGroup]="loggedUser" (submit)="login(this.loggedUser)">
+    <div class="login-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="email" pInputText formControlName="email" required email>
+        <label for="float-input">Email</label>
+      </span>
+      <div class="error-info">
+        <small class="small-error" *ngIf="this.loggedUser.get('email')?.errors?.['required']">Proszę podać
+          email.</small>
+        <small class="small-error" *ngIf="this.loggedUser.get('email')?.errors?.['badInputValue']">
+          Email nie może posiadać spacji.
+        </small>
+      </div>
+    </div>
+    <div class="login-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="password" pInputText formControlName="password" required>
+        <label for="float-input">Hasło</label>
+      </span>
+      <div class="error-info">
+        <small class="small-error" *ngIf="this.loggedUser.get('password')?.errors?.['required']">
+          Proszę podać hasło.</small>
+      </div>
+    </div>
+    <button pButton type="submit" class="login-button" label="Zaloguj"></button>
+  </form>
+</div>

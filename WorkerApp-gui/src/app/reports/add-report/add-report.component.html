@@ -1,0 +1,22 @@
+<section class="add-report-container">
+  <div class="add-report-header">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="add-report-form">
+    <form [formGroup]="this.report" [action]="addReport(this.report)">
+      <span class="p-float-label">
+        <input id="float-input" type="email" pInputText formControlName="recipient">
+        <label for="float-input" class="label">Wyślij do</label>
+      </span>
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="subject">
+        <label for="float-input" class="label">Temat zgłoszenia</label>
+      </span>
+      <span class="p-float-label">
+        <textarea pInputText formControlName="content"></textarea>
+        <label for="float-input" class="label">Treść zgłoszenia</label>
+      </span>
+      <button pButton type="submit" label="Dodaj" id="add-report-button"></button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="add-worker-container">
+  <h1>{{title}}</h1>
+  <form class="add-worker-form" [formGroup]="newWorker" (ngSubmit)="addWorker(newWorker)">
+    <div class="worker-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="name">
+        <label for="float-input">Imię</label>
+      </span>
+    </div>
+    <div class="worker-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="surname">
+        <label for="float-input">Nazwisko</label>
+      </span>
+    </div>
+    <div class="worker-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="function">
+        <label for="float-input">Funkcja</label>
+      </span>
+    </div>
+    <div class="worker-item-block">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="age">
+        <label for="float-input">Wiek</label>
+      </span>
+    </div>
+    <button pButton type="submit" class="add-button" label="Dodaj"></button>
+  </form>
+</div>
